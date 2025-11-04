@@ -20,9 +20,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 50px 0; /* Отступы */
-    
-    /* Эффект "виньетки" (затемнение по краям) */
+    padding: 50px 0;
     box-shadow: inset 0 0 100px 30px #000;
 }
 
@@ -30,15 +28,16 @@
 .map-image {
     width: 1200px;
     height: 800px;
-    
-    /* Стили "бумаги" */
     border-radius: 5px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid #4a4a4a;
-    opacity: 0.9; /* Выцветшая карта */
-    
-    /* Анимация */
+    opacity: 0.9;
     animation: unfold 1s ease-out;
+    cursor: zoom-in;
+    transition: opacity 0.3s ease;
+}
+.map-image:hover {
+    opacity: 1;
 }
 
 /* 4. Горизонтальная линия */
@@ -49,4 +48,28 @@
     background-color: #bdb0a2;
     border: none;
     border-radius: 2px;
+}
+
+
+/*
+ * =========================================
+ * МОБИЛЬНАЯ АДАПТАЦИЯ (800px и меньше)
+ * =========================================
+ */
+@media (max-width: 800px) {
+    .map-container {
+        padding: 0;
+        box-shadow: inset 0 0 50px 10px #000;
+    }
+    
+    .map-image {
+        width: 100%; /* Карта на всю ширину */
+        height: auto; /* Высота авто */
+        border-radius: 0;
+        border: none;
+    }
+    
+    .map-divider {
+        width: 80%;
+    }
 }

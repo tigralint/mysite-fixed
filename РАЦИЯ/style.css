@@ -57,7 +57,7 @@ select {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
     transition: all 0.3s ease;
-    caret-color: #ffd452; /* Желтый курсор */
+    caret-color: #ffd452;
 }
 
 input[type="text"]:focus,
@@ -166,4 +166,34 @@ input[type="Reset"] {
 }
 input[type="Reset"]:hover {
     background-color: #777;
+}
+
+
+/*
+ * =========================================
+ * МОБИЛЬНАЯ АДАПТАЦИЯ (800px и меньше)
+ * =========================================
+ */
+@media (max-width: 800px) {
+    form {
+        width: 98%;
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+    
+    form p:first-child b {
+        font-size: 1.8rem;
+    }
+    
+    /* Делаем чекбоксы и радио-кнопки в столбик для удобства */
+    form p label {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    input[type="Reset"],
+    input[type="Submit"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }

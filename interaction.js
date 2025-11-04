@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const character = document.querySelector('.character');
     
-    // Если персонажа нет на странице, ничего не делаем
-    if (!character) return;
+    // Если персонажа нет ИЛИ экран слишком узкий (мобильный), ничего не делаем
+    if (!character || window.innerWidth < 800) return;
 
     let charRect = character.getBoundingClientRect();
     let charCenterX = charRect.left + charRect.width / 2;
@@ -27,32 +27,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (dist < activationDistance) {
             // Мышь близко:
-            // 1. Останавливаем "парение"
             character.style.animationPlayState = 'paused';
 
-            // 2. Рассчитываем наклон на основе близости
             const percentX = (mouseX - charCenterX) / activationDistance;
             const percentY = (mouseY - charCenterY) / activationDistance;
 
             const maxRotateX = 10;
             const maxRotateY = 15;
             
-            const rotateX = percentY * maxRotateX * -1; // -1 для инверсии
+            const rotateX = percentY * maxRotateX * -1;
             const rotateY = percentX * maxRotateY;
 
-            // Применяем 3D-наклон
             character.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         } else {
             // Мышь далеко:
-            // 1. Возобновляем "парение"
             character.style.animationPlayState = 'running';
-
-            // 2. Сбрасываем наклон
             character.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
         }
     });
 
-    // Плавный возврат в исходное положение, когда мышь уходит со страницы
     document.body.addEventListener('mouseleave', () => {
         character.style.animationPlayState = 'running';
         character.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';

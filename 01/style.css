@@ -65,34 +65,31 @@ body {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    
-    /* Фон "обложки" */
-    background: #6a0000; /* Темно-красный */
-    border: 1px solid #c9a000; /* Золотая рамка */
+    background: #6a0000;
+    border: 1px solid #c9a000;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.4), 
-                inset 0 0 15px rgba(0,0,0,0.3); /* Тень + внутренняя тень */
-
+                inset 0 0 15px rgba(0,0,0,0.3);
     color: #f0f0f0;
-    font-family: 'Times New Roman', Times, serif; /* "Официальный" шрифт */
+    font-family: 'Times New Roman', Times, serif;
     position: relative;
+    overflow: hidden; /* Важно для ::before */
 }
 
-/* "Золотой герб" (псевдо-элемент) */
 .passport-container::before {
-    content: '\2606'; /* Звезда (можно заменить на \265A ♛ или \2691 ⚹) */
+    content: '\2606';
     font-size: 3rem;
     color: #c9a000;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0.1; /* Делаем его водяным знаком */
+    opacity: 0.1;
     z-index: 1;
 }
 
 .passport-container h2 {
-    color: #ffd452; /* Золотой */
+    color: #ffd452;
     text-align: center;
     font-weight: bold;
     font-family: 'PP Mondwest', monospace;
@@ -106,13 +103,11 @@ body {
 
 .passport-content {
     display: flex;
-    flex-wrap: wrap; /* Для мобильных */
+    flex-wrap: wrap;
     margin-top: 20px;
     position: relative;
     z-index: 2;
-    
-    /* Фон "внутренней страницы" */
-    background: rgba(244, 244, 244, 0.9); /* Светлый, но не белый */
+    background: rgba(244, 244, 244, 0.9);
     color: #333;
     border-radius: 4px;
     padding: 15px;
@@ -150,6 +145,11 @@ body {
     padding: 10px 15px;
     position: relative;
     z-index: 2;
+    /* Фон для футера паспорта */
+    background: rgba(244, 244, 244, 0.9);
+    color: #333;
+    margin-top: 10px;
+    border-radius: 4px;
 }
 .passport-footer p {
     color: #333;
@@ -165,13 +165,15 @@ body {
 }
 .passport-footer .signature {
     color: #333;
-    font-family: 'Brush Script MT', 'cursive'; /* Имитация подписи */
+    font-family: 'Brush Script MT', 'cursive';
     font-size: 1.5rem;
     text-decoration: none;
 }
 
 
-/* 2. Стиль "панели" для калькулятора (на 03) */
+/*
+ * Стиль "панели" для калькулятора (на 03)
+ */
 .calculator-panel {
     max-width: 600px;
     margin: 20px auto;
@@ -203,7 +205,7 @@ body {
     font-size: 1rem;
     transition: all 0.3s ease;
     margin-bottom: 10px;
-    caret-color: #ffd452; /* Анимация курсора */
+    caret-color: #ffd452;
 }
 .calculator-panel input[type="number"]:focus {
     outline: none;
@@ -219,4 +221,55 @@ body {
     min-height: 40px;
     color: #ffd452;
     background: #2a2a2a;
+}
+
+
+/*
+ * =========================================
+ * МОБИЛЬНАЯ АДАПТАЦИЯ (800px и меньше)
+ * =========================================
+ */
+@media (max-width: 800px) {
+    body {
+        padding: 10px;
+    }
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .navigation {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+    .navigation a {
+        margin: 0 10px;
+    }
+    .task-title {
+        font-size: 1.2rem;
+    }
+
+    /* Адаптация Паспорта */
+    .passport-container {
+        padding: 10px;
+    }
+    .passport-content {
+        flex-direction: column; /* Ставим фото над текстом */
+        align-items: center;
+        padding: 10px;
+    }
+    .passport-photo {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    .passport-info {
+        min-width: 100%;
+    }
+    
+    /* Адаптация Калькулятора */
+    .calculator-panel {
+        width: 98%;
+        padding: 15px;
+    }
+    .calculator-panel h2 {
+        font-size: 1.5rem;
+    }
 }

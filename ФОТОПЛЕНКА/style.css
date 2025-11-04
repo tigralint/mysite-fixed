@@ -63,7 +63,7 @@
     height: auto;
     border-radius: 2px;
     border: 1px solid #333;
-    cursor: zoom-in; /* ДОБАВЛЕНО: Намек на клик */
+    cursor: zoom-in;
 }
 
 .image-block p {
@@ -76,5 +76,28 @@
 @media (min-width: 600px) {
     .image-block {
         max-width: 450px;
+    }
+}
+
+
+/*
+ * =========================================
+ * МОБИЛЬНАЯ АДАПТАЦИЯ (800px и меньше)
+ * =========================================
+ */
+@media (max-width: 800px) {
+    .film-strip-container {
+        padding: 10px 0;
+    }
+    
+    .image-block {
+        width: 80vw; /* Кадр занимает 80% ширины экрана */
+        max-width: 300px; /* Но не больше 300px */
+        padding: 10px;
+        margin: 0 10px;
+    }
+    
+    .image-block p {
+        font-size: 0.8rem;
     }
 }

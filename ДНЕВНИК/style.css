@@ -2,87 +2,77 @@
  * СТИЛИ ДЛЯ СТРАНИЦЫ "ДНЕВНИК" (ТЕРМИНАЛ)
  */
 
-/* * 1. Стилизация блоков .content-block и .text-content 
- * (Переопределяем стили из главного style.css)
- */
+/* 1. Стилизация блоков .content-block и .text-content */
 .content-block {
-    background: #1a1a1a; /* Черный фон терминала */
-    border: 1px solid #39FF14; /* Зеленая рамка */
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.2); /* Зеленое свечение */
+    background: #1a1a1a;
+    border: 1px solid #39FF14;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
 }
 
 .text-content {
-    color: #39FF14; /* Основной зеленый цвет текста */
-    font-family: 'Courier New', Courier, monospace; /* Шрифт как у терминала */
-    line-height: 1.8; /* Увеличим интервал для читаемости */
+    color: #39FF14;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.8;
 }
 
-/* Заголовки в терминале */
 .text-content h3 {
-    color: #8cff8c; /* Более яркий зеленый для заголовков */
+    color: #8cff8c;
     text-transform: uppercase;
     border-bottom: 1px dashed #39FF14;
     padding-bottom: 5px;
 }
 
-/* Ссылки в терминале */
 .text-content a {
     color: #8cff8c;
-    text-decoration: underline;
+    text-decoration: none; /* Убираем подчеркивание */
     transition: all 0.2s ease;
+    border-bottom: 1px dashed #8cff8c; /* Вместо этого пунктир */
 }
 .text-content a:hover {
     color: #ffffff;
     background: #39FF14;
+    border-bottom: 1px dashed #ffffff;
+    text-shadow: none; /* Убираем родительское свечение */
 }
 
-/* * 2. Стилизация записей дневника (.log-files)
- */
+/* 2. Стилизация записей дневника (.log-files) */
 .log-files {
    font-family: 'Courier New', Courier, monospace;
-   color: #39FF14; /* Цвет текста записей */
+   color: #39FF14;
  }
-
- .file-entry {
+.file-entry {
    margin-bottom: 40px;
    padding: 15px;
-   background: #2a2a2a; /* Чуть более светлый фон для "файла" */
+   background: #2a2a2a;
    border-left: 3px solid #39FF14;
-   border-radius: 0px; /* Убираем скругление */
+   border-radius: 0px;
    transition: all 0.3s ease;
  }
-
- .file-entry:hover {
+.file-entry:hover {
    box-shadow: 0 0 10px rgba(255, 212, 82, 0.3);
-   border-left: 3px solid #ffd452; /* Желтый акцент при наведении */
+   border-left: 3px solid #ffd452;
    transform: translateY(-3px);
  }
-
- .file-title {
-   color: #ffffff; /* Белый для заголовка файла (для контраста) */
+.file-title {
+   color: #ffffff;
    margin-top: 0;
    border-bottom: 1px dashed #444;
    padding-bottom: 5px;
  }
-
- .file-date {
-   color: #aaa; /* Серый для даты */
+.file-date {
+   color: #aaa;
    font-style: italic;
    margin-bottom: 15px;
  }
-
- .file-content {
+.file-content {
    line-height: 1.8;
  }
- 
- .error-message {
-   color: #ff4d4d; /* Красный для СБОЙ */
+.error-message {
+   color: #ff4d4d;
    font-weight: bold;
    text-transform: uppercase;
  }
-
- /* Желтое "важное сообщение" */
- .important-message {
+.important-message {
    color: #ffd452;
    font-size: 1.2em;
    text-align: center;
@@ -92,35 +82,31 @@
    background: #2a2a2a;
    border: 1px dashed #ffd452;
  }
-
- .conclusion {
+.conclusion {
    font-weight: bold;
-   color: #ffffff; /* Белый для вывода */
+   color: #ffffff;
  }
-
- strong {
-   color: #ffffff; /* Белый для выделенного */
+strong {
+   color: #ffffff;
  }
  
-/* * 3. Стилизация таблицы
- */
-
+/* 3. Стилизация таблицы */
  table {
-    background-image: none; /* Убираем фон с тетрадным листком */
-    background-color: #2a2a2a; /* Фон терминала */
+    background-image: none;
+    background-color: #2a2a2a;
     width: 650px; 
-    height: auto; /* Убираем фикс. высоту */
+    height: auto;
     border-collapse: collapse;
     margin-top: 20px;
 }
 th, td {
-    border: 2px solid #39FF14; /* Зеленая рамка */
+    border: 2px solid #39FF14;
     padding: 12px;
     text-align: center;
 }
 th {
-    background-color: #39FF14; /* Зеленая шапка */
-    color: #1a1a1a; /* Черный текст на ней */
+    background-color: #39FF14;
+    color: #1a1a1a;
     font-weight: bold;
 }
 .cell-image {
@@ -128,9 +114,45 @@ th {
     height: 100px;
     border: 1px solid #39FF14;
     border-radius: 0;
+    transition: transform 0.3s ease;
 }
-/* Ссылки в таблице - делаем желтыми для акцента */
+.cell-image:hover {
+    transform: scale(1.1);
+}
+
 table a {
     color: #ffd452;
     text-decoration: underline;
+}
+table a:hover {
+    background: none;
+    color: #fff;
+    border: none;
+}
+
+
+/*
+ * =========================================
+ * МОБИЛЬНАЯ АДАПТАЦИЯ (800px и меньше)
+ * =========================================
+ */
+@media (max-width: 800px) {
+    .text-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Делаем таблицу 100% ширины */
+    table {
+        width: 100%;
+    }
+    
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+    
+    .cell-image {
+        width: 60px;
+        height: 60px;
+    }
 }
