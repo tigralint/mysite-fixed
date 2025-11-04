@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'PP Mondwest';
+    src: url('../fonts/PP-Mondwest.woff2') format('woff2'),
+        url('../fonts/PP-Mondwest.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-image: url(../images/Иллюстрация_без_названия\ 170.png);
+    font-family: 'PP Mondwest', monospace;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    color: #ffffff;
+    /* Белый цвет для всего текста */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.main-title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 30px;
+    color: #ffffff;
+}
+
+.navigation {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.navigation .current {
+    text-decoration: underline;
+}
+
+.navigation a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    color: #ffd452;
+}
+
+
+.content {
+    color: #ffffff;
+    /* Белый цвет для всего контента после заголовка и навигации */
+}
+
+.task-title {
+    color: #ffffff;
+    /* Белый цвет для "Задание 1" */
+    margin-bottom: 20px;
+}
+
+.passport-container {
+    color: #ffffff;
+    /* Белый цвет для всего содержимого паспорта */
+}
+
+.passport-container h2 {
+    text-align: center;
+    color: #ffffff;
+    /* Белый цвет для заголовка паспорта */
+}
+
+.signature {
+    text-decoration: underline;
+    margin-top: 30px;
+}
+
+table {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.photo-cell {
+    width: 150px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.photo-cell img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info-cell {
+    padding-left: 30px;
+    vertical-align: top;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.image-item {
+    text-align: center;
+    max-width: 1900px;
+}
+
+.image-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.caption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #ffffff;
+    /* Белый цвет для подписей */
+}

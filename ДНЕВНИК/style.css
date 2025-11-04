@@ -1,0 +1,130 @@
+ .log-files {
+   font-family: 'PP Mondwest', monospace;
+   color: #2f4ba0;
+ }
+
+ .file-entry {
+   margin-bottom: 40px;
+   padding: 15px;
+   border-left: 3px solid #2f4ba0;
+   background-color: #e8e8e8;
+ }
+
+ .file-title {
+   color: #000000;
+   margin-top: 0;
+   border-bottom: 1px dashed #444;
+   padding-bottom: 5px;
+ }
+
+ .file-date {
+   color: #888;
+   font-style: italic;
+   margin-bottom: 15px;
+ }
+
+ .file-content {
+   line-height: 1.6;
+ }
+
+ .error-message {
+   color: #b60000;
+   font-weight: bold;
+   text-transform: uppercase;
+ }
+
+ .important-message {
+   color:  rgb(50, 173, 69);
+   ;
+   font-size: 1.2em;
+   text-align: center;
+   font-weight: bold;
+   margin: 15px 0;
+   padding: 10px;
+   background-color: #2c2c2c;
+ }
+
+ .conclusion {
+   font-weight: bold;
+   color: #000000;
+ }
+
+ strong {
+   color: #000000;
+ }
+
+ table-container {
+   position: relative;
+   width: 100%;
+   max-width: 800px;
+   margin: 20px auto;
+ }
+
+ .background-image {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url('https://via.placeholder.com/800x400');
+   background-size: cover;
+   background-position: center;
+   opacity: 0.3;
+   z-index: -1;
+ }
+
+ table {
+   width: 100%;
+   border-collapse: collapse;
+   background-color: rgba(255, 255, 255, 0.8);
+ }
+
+ th,
+ td {
+   border: 1px solid #ddd;
+   padding: 12px;
+   text-align: left;
+ }
+
+ th {
+   background-color: rgba(76, 175, 80, 0.7);
+   color: white;
+ }
+
+ .cell-image {
+   width: 100px;
+   height: 100px;
+   object-fit: cover;
+   border-radius: 5px;
+ }
+
+ a {
+   color: #2196F3;
+   text-decoration: none;
+   font-weight: bold;
+ }
+
+ a:hover {
+   text-decoration: underline;
+ }
+
+ table {
+            background-image: url('../images/таблица\ фон.jpg');
+            background-size: cover;
+            width: 650px; 
+            height: 450px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        .cell-image {
+            width: 100px;
+            height: 100px;
+        }
+        a {
+            color: rgb(50, 173, 69);
+            text-decoration: underline;
+        }

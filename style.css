@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('images/Иллюстрация_без_названия\ 170.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Верхняя часть */
+.top-left {
+    position: absolute;
+    top: 50px;
+    left: -150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.top-left-icon {
+    width: 80px;
+    height: 68px;
+    background-image: url('images/Дом.png');
+    background-size: cover;
+    border-radius: 2px;
+}
+
+.current-page-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+    margin-left: 13px;
+    font-weight: bold;
+}
+
+.current-page-link:hover {
+    opacity: 1;
+    color: #ffd452;
+}
+
+.top-right {
+    position: absolute;
+    top: 50px;
+    right: -150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-right-icon {
+    width: 70px;
+    height: 82px;
+    background-image: url('images/Компьютер.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.top-right-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: bold;
+
+}
+
+.top-right-link:hover {
+    opacity: 1;
+    color: #ffd452;
+
+}
+
+/* Центральная часть */
+.main-title {
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 30px;
+    font-family: 'PP Mondwest', monospace;
+}
+
+/* Навигация */
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 80px;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover {
+    transform: translateY(-5px);
+}
+
+.nav-icon {
+    width: 70px;
+    height: 58px;
+    background-image: url('images/Папка.png');
+    background-size: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.nav-text {
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: bold;
+}
+
+/* Нижняя часть */
+
+.bottom-right {
+    position: absolute;
+    bottom: 50px;
+    right: -130px;
+}
+
+.character {
+    width: 300px;
+    height: 200px;
+    background-image: url('images/Персонаж.png');
+    background-size: cover;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.content-block {
+    width: 1165px;
+    height: 3000px;
+    background: white;
+    padding: 50px;
+    margin: 15px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+}
+
+.text-content {
+    color: #333;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+}

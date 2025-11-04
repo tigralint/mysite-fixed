@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="../01/style.css">
+</head>
+
+<body>
+    <!-- Заголовок -->
+    <header class="header">
+        <h1 class="main-title">НОЧНОЙ СТРАННИК</h1>
+    </header>
+
+    <!-- Навигация -->
+    <nav class="navigation">
+        <a href="../01/index.html" target="_self">1</a>
+        <a href="index.html" target="_self" class="current">2</a>
+        <a href="../03/index.html" target="_self">3</a>
+        <a href="../index.html">Главная</a>
+    </nav>
+
+    <!-- Основное содержимое -->
+    <main class="content">
+        <h3 class="task-title">Задание 2</h3>
+
+        <div class="passport-container">
+            <h2>Паспорт гражданина Российской Федерации</h2>
+
+            <p>
+                <b>Паспорт выдан:</b> ГУ МВД ПО Г.МОСКВЕ
+            </p>
+
+            <p>
+                <b>Дата выдачи:</b> 02.07.2020 &nbsp;&nbsp;&nbsp; <b>Код подразделения:</b> 770-061
+            </p>
+
+            <p class="signature">
+                <b>Подпись:</b> Харченко
+            </p>
+
+            <table style="margin-top: 40px;">
+                <tr>
+                    <td style="width: 150px; height: 200px; margin-right: 20px;">
+                        <img src="../images/photo_5409144068589617417_x.jpg" alt="Фотография"
+                            style="width: 150px; height: 200px; object-fit: cover;">
+                    </td>
+                    <td style="padding-left: 30px;">
+
+                        <span id="dream"> </span>
+
+                        <p><b>Фамилия:</b><span id="surname"> Харченко</span></p>
+                        <p><b>Имя:</b><span id="name"> Елизавета</span></p>
+                        <p><b>Пол:</b> жен. &nbsp;&nbsp;&nbsp; <b>Дата рождения:</b> <span id="date">
+                                19.05.2006</span></p>
+                        <p><b>Город:</b> Москва</p>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+            <p id="for_click">Перевести на латиницу</p>
+
+            <!--
+document.getElementByid("date").innerText        
+-->
+
+</body>
+<script src="./change.js"></script>
+
+</html>
