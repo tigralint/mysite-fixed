@@ -1,15 +1,170 @@
+/*
+ * СТИЛИ ДЛЯ СТРАНИЦЫ "РАЦИЯ" (Форма "Давай Дружить")
+ */
+
+/* 1. Анимация для кнопки "Отправить" */
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px 0 rgba(255, 212, 82, 0.4); }
+    70% { box-shadow: 0 0 15px 5px rgba(255, 212, 82, 0.0); }
+    100% { box-shadow: 0 0 5px 0 rgba(255, 212, 82, 0.4); }
+}
+
+/* 2. Контейнер формы ("Панель Управления") */
 form {
     max-width: 700px;
     margin: 0 auto;
-    padding-left: 25px;
-    padding-bottom: 50px; /* Добавим отступ снизу */
+    padding: 35px; /* Увеличим отступ */
+    padding-bottom: 50px;
+    
+    /* Создаем "панель" */
+    background: rgba(0, 0, 0, 0.4); /* Полупрозрачный фон */
+    border: 1px solid #ffd452; /* Желтая рамка */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 212, 82, 0.2); /* Желтое свечение */
+    
+    /* Шрифты для формы */
+    font-family: 'Courier New', Courier, monospace;
+    color: #f0f0f0; /* Светлый текст */
 }
+
+/* 3. Заголовок "Давай дружить" */
+form p:first-child b {
+    font-family: 'PP Mondwest', monospace; /* Наш главный шрифт */
+    font-size: 2.5rem; /* Крупнее */
+    color: #ffd452; /* Желтый */
+    text-shadow: 0 0 10px rgba(255, 212, 82, 0.5);
+    display: block;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* 4. Группы полей (теги <p>) */
+form p {
+    margin-bottom: 25px; /* Больше воздуха */
+    line-height: 1.6;
+}
+
+/* 5. Стилизация полей ввода (input, textarea, select) */
+input[type="text"],
+input[type="Number"],
+input[type="date"],
+input[type="Password"],
+textarea,
+select {
+    background: #2a2a2a; /* Темный фон поля */
+    color: #f0f0f0;
+    border: 1px solid #555; /* Темная рамка */
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Важно! */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Эффект :focus (когда кликнули в поле) */
+input[type="text"]:focus,
+input[type="Number"]:focus,
+input[type="date"]:focus,
+input[type="Password"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #ffd452; /* Желтая рамка */
+    box-shadow: 0 0 10px rgba(255, 212, 82, 0.3); /* Желтое свечение */
+}
+
+textarea {
+    resize: vertical; /* Разрешаем менять размер только по высоте */
+    min-height: 100px;
+}
+
+/* 6. Кастомные Radio и Checkbox (Самое важное) */
+
+input[type="Radio"],
+input[type="Checkbox"] {
+    appearance: none; /* Прячем стандартный вид */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* Рисуем свою "коробку" */
+    width: 16px;
+    height: 16px;
+    background: #2a2a2a;
+    border: 1px solid #555;
+    position: relative;
+    top: 3px; /* Выравниваем по тексту */
+    margin-right: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Скругляем Radio */
+input[type="Radio"] {
+    border-radius: 50%;
+}
+
+/* Квадратим Checkbox */
+input[type="Checkbox"] {
+    border-radius: 3px;
+}
+
+/* Ховер-эффект для них */
+input[type="Radio"]:hover,
+input[type="Checkbox"]:hover {
+    border-color: #ffd452;
+}
+
+/* Рисуем "галочку/точку" при :checked */
+input[type="Radio"]::after,
+input[type="Checkbox"]::after {
+    content: '';
+    display: block;
+    position: absolute;
+    
+    /* Прячем по умолчанию */
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+
+/* Точка для Radio */
+input[type="Radio"]::after {
+    width: 8px;
+    height: 8px;
+    background: #ffd452;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+}
+
+/* Галочка для Checkbox */
+input[type="Checkbox"]::after {
+    width: 4px;
+    height: 8px;
+    border: solid #ffd452;
+    border-width: 0 2px 2px 0;
+    top: 1px;
+    left: 5px;
+    transform: rotate(45deg) scale(0);
+}
+
+/* Показываем "галочку/точку" при :checked */
+input[type="Radio"]:checked::after,
+input[type="Checkbox"]:checked::after {
+    transform: scale(1);
+}
+input[type="Checkbox"]:checked::after {
+     transform: rotate(45deg) scale(1);
+}
+
+/* 7. Кнопки (Пульсация) */
 
 input[type="Reset"],
 input[type="Submit"] {
-    padding: 10px 20px;
+    padding: 12px 22px; /* Чуть побольше */
     background-color: #ffd452;
-    color: #333;
+    color: #222; /* Темнее для контраста */
     border: none;
     border-radius: 4px;
     font-weight: bold;
@@ -17,11 +172,27 @@ input[type="Submit"] {
     transition: all 0.3s ease;
     margin-right: 10px;
     font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+input[type="Submit"] {
+    /* Анимация пульсации для "Отправить" */
+    animation: pulse 2s infinite;
 }
 
 input[type="Reset"]:hover,
 input[type="Submit"]:hover {
     background-color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation-play-state: paused; /* Пауза анимации при наведении */
+}
+
+/* Кнопку "Сброс" делаем менее заметной */
+input[type="Reset"] {
+    background-color: #555;
+    color: #f0f0f0;
+}
+input[type="Reset"]:hover {
+    background-color: #777;
 }
