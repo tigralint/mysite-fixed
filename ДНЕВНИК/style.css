@@ -1,138 +1,136 @@
+/*
+ * СТИЛИ ДЛЯ СТРАНИЦЫ "ДНЕВНИК" (ТЕРМИНАЛ)
+ */
+
+/* * 1. Стилизация блоков .content-block и .text-content 
+ * (Переопределяем стили из главного style.css)
+ */
+.content-block {
+    background: #1a1a1a; /* Черный фон терминала */
+    border: 1px solid #39FF14; /* Зеленая рамка */
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.2); /* Зеленое свечение */
+}
+
+.text-content {
+    color: #39FF14; /* Основной зеленый цвет текста */
+    font-family: 'Courier New', Courier, monospace; /* Шрифт как у терминала */
+    line-height: 1.8; /* Увеличим интервал для читаемости */
+}
+
+/* Заголовки в терминале */
+.text-content h3 {
+    color: #8cff8c; /* Более яркий зеленый для заголовков */
+    text-transform: uppercase;
+    border-bottom: 1px dashed #39FF14;
+    padding-bottom: 5px;
+}
+
+/* Ссылки в терминале */
+.text-content a {
+    color: #8cff8c;
+    text-decoration: underline;
+    transition: all 0.2s ease;
+}
+.text-content a:hover {
+    color: #ffffff;
+    background: #39FF14;
+}
+
+/* * 2. Стилизация записей дневника (.log-files)
+ */
 .log-files {
-   font-family: 'PP Mondwest', monospace;
-   color: #2f4ba0;
+   font-family: 'Courier New', Courier, monospace;
+   color: #39FF14; /* Цвет текста записей */
  }
 
  .file-entry {
    margin-bottom: 40px;
    padding: 15px;
-   border-left: 3px solid #2f4ba0;
-   background-color: #e8e8e8;
-   border-radius: 4px; /* Скруглим углы */
-   transition: all 0.3s ease; /* Плавный переход */
+   background: #2a2a2a; /* Чуть более светлый фон для "файла" */
+   border-left: 3px solid #39FF14;
+   border-radius: 0px; /* Убираем скругление */
+   transition: all 0.3s ease;
  }
 
  .file-entry:hover {
-   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-   border-left: 3px solid #ffd452; /* Меняем цвет рамки */
-   transform: translateY(-3px); /* Приподнимаем */
+   box-shadow: 0 0 10px rgba(255, 212, 82, 0.3);
+   border-left: 3px solid #ffd452; /* Желтый акцент при наведении */
+   transform: translateY(-3px);
  }
 
  .file-title {
-   color: #000000;
+   color: #ffffff; /* Белый для заголовка файла (для контраста) */
    margin-top: 0;
    border-bottom: 1px dashed #444;
    padding-bottom: 5px;
  }
 
  .file-date {
-   color: #888;
+   color: #aaa; /* Серый для даты */
    font-style: italic;
    margin-bottom: 15px;
  }
 
  .file-content {
-   line-height: 1.6;
+   line-height: 1.8;
  }
-
+ 
  .error-message {
-   color: #b60000;
+   color: #ff4d4d; /* Красный для СБОЙ */
    font-weight: bold;
    text-transform: uppercase;
  }
 
+ /* Желтое "важное сообщение" */
  .important-message {
-   color:  rgb(50, 173, 69);
-   ;
+   color: #ffd452;
    font-size: 1.2em;
    text-align: center;
    font-weight: bold;
    margin: 15px 0;
    padding: 10px;
-   background-color: #2c2c2c;
+   background: #2a2a2a;
+   border: 1px dashed #ffd452;
  }
 
  .conclusion {
    font-weight: bold;
-   color: #000000;
+   color: #ffffff; /* Белый для вывода */
  }
 
  strong {
-   color: #000000;
+   color: #ffffff; /* Белый для выделенного */
  }
-
- table-container {
-   position: relative;
-   width: 100%;
-   max-width: 800px;
-   margin: 20px auto;
- }
-
- .background-image {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-image: url('https://via.placeholder.com/800x400');
-   background-size: cover;
-   background-position: center;
-   opacity: 0.3;
-   z-index: -1;
- }
+ 
+/* * 3. Стилизация таблицы
+ */
 
  table {
-   width: 100%;
-   border-collapse: collapse;
-   background-color: rgba(255, 255, 255, 0.8);
- }
-
- th,
- td {
-   border: 1px solid #ddd;
-   padding: 12px;
-   text-align: left;
- }
-
- th {
-   background-color: rgba(76, 175, 80, 0.7);
-   color: white;
- }
-
- .cell-image {
-   width: 100px;
-   height: 100px;
-   object-fit: cover;
-   border-radius: 5px;
- }
-
- a {
-   color: #2196F3;
-   text-decoration: none;
-   font-weight: bold;
- }
-
- a:hover {
-   text-decoration: underline;
- }
-
- table {
-            background-image: url('../images/таблица фон.jpg');
-            background-size: cover;
-            width: 650px; 
-            height: 450px;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 2px solid black;
-            padding: 8px;
-            text-align: center;
-        }
-        .cell-image {
-            width: 100px;
-            height: 100px;
-        }
-        a {
-            color: rgb(50, 173, 69);
-            text-decoration: underline;
-        }
+    background-image: none; /* Убираем фон с тетрадным листком */
+    background-color: #2a2a2a; /* Фон терминала */
+    width: 650px; 
+    height: auto; /* Убираем фикс. высоту */
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 2px solid #39FF14; /* Зеленая рамка */
+    padding: 12px;
+    text-align: center;
+}
+th {
+    background-color: #39FF14; /* Зеленая шапка */
+    color: #1a1a1a; /* Черный текст на ней */
+    font-weight: bold;
+}
+.cell-image {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #39FF14;
+    border-radius: 0;
+}
+/* Ссылки в таблице - делаем желтыми для акцента */
+table a {
+    color: #ffd452;
+    text-decoration: underline;
+}

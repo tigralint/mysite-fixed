@@ -5,8 +5,7 @@ body {
     padding: 20px;
     line-height: 1.6;
     color: #ffffff;
-    /* Белый цвет для всего текста */
-    animation: fadeIn 0.8s ease-in-out; /* Анимация появления */
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 .header {
@@ -20,6 +19,7 @@ body {
     font-size: 5rem;
     margin-top: 30px;
     color: #ffffff;
+    font-family: 'PP Mondwest', monospace;
 }
 
 .navigation {
@@ -37,37 +37,45 @@ body {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
-    transition: all 0.3s ease; /* Плавный переход */
+    transition: all 0.3s ease;
 }
 
 .navigation a:hover {
     color: #ffd452;
-    transform: translateY(-2px); /* Приподнимаем при наведении */
+    transform: translateY(-2px);
 }
 
 
 .content {
     color: #ffffff;
-    /* Белый цвет для всего контента после заголовка и навигации */
 }
 
 .task-title {
     color: #ffffff;
-    /* Белый цвет для "Задание 1" */
     margin-bottom: 20px;
 }
 
+/* * НОВЫЙ СТИЛЬ ДЛЯ ПАСПОРТА
+ */
 .passport-container {
-    color: #ffffff;
-    /* Белый цвет для всего содержимого паспорта */
+    background: #f4f4f4; /* Светло-серый фон документа */
+    color: #333; /* Темный текст */
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4); /* Тень, чтобы "приподнять" */
+    max-width: 800px; /* Ограничим ширину */
+    margin: 0 auto; /* Центрируем */
 }
 
 .passport-container h2 {
     text-align: center;
-    color: #ffffff;
-    /* Белый цвет для заголовка паспорта */
+    color: #111; /* Черный заголовок паспорта */
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
 }
-
+/* * КОНЕЦ НОВОГО СТИЛЯ
+ */
+ 
 .signature {
     text-decoration: underline;
     margin-top: 30px;
@@ -77,6 +85,7 @@ table {
     margin-top: 40px;
     width: 100%;
     max-width: 600px;
+    color: #333; /* Убедимся, что текст в таблице темный */
 }
 
 .photo-cell {
@@ -90,6 +99,7 @@ table {
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
+    border: 1px solid #ccc; /* Тонкая рамка у фото */
 }
 
 .info-cell {
@@ -120,5 +130,4 @@ table {
     margin-top: 10px;
     font-style: italic;
     color: #ffffff;
-    /* Белый цвет для подписей */
 }
