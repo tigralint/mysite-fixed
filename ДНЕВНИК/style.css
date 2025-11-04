@@ -1,4 +1,4 @@
- .log-files {
+.log-files {
    font-family: 'PP Mondwest', monospace;
    color: #2f4ba0;
  }
@@ -8,6 +8,14 @@
    padding: 15px;
    border-left: 3px solid #2f4ba0;
    background-color: #e8e8e8;
+   border-radius: 4px; /* Скруглим углы */
+   transition: all 0.3s ease; /* Плавный переход */
+ }
+
+ .file-entry:hover {
+   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+   border-left: 3px solid #ffd452; /* Меняем цвет рамки */
+   transform: translateY(-3px); /* Приподнимаем */
  }
 
  .file-title {
@@ -109,7 +117,7 @@
  }
 
  table {
-            background-image: url('../images/таблица\ фон.jpg');
+            background-image: url('../images/таблица фон.jpg');
             background-size: cover;
             width: 650px; 
             height: 450px;

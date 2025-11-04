@@ -1,3 +1,30 @@
+@font-face {
+    font-family: 'PP Mondwest';
+    src: url('fonts/PP-Mondwest.woff2') format('woff2'),
+         url('fonts/PP-Mondwest.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Анимация плавного появления */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Анимация "парения" персонажа */
+@keyframes bobbing {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-7px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Анимация "мерцания" заголовка */
+@keyframes flicker {
+    0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffd452; }
+    50% { text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #ffd452; }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +32,7 @@
 }
 
 body {
-    background-image: url('images/Иллюстрация_без_названия\ 170.png');
+    background-image: url('images/Иллюстрация_без_названия 170.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -21,6 +48,8 @@ body {
     padding: 20px;
     position: relative;
     min-height: 100vh;
+    /* Применяем анимацию появления */
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 /* Верхняя часть */
@@ -49,11 +78,13 @@ body {
     opacity: 0.8;
     margin-left: 13px;
     font-weight: bold;
+    transition: all 0.3s ease; /* Плавный переход */
 }
 
 .current-page-link:hover {
     opacity: 1;
     color: #ffd452;
+    transform: scale(1.1); /* Увеличение при наведении */
 }
 
 .top-right {
@@ -80,13 +111,13 @@ body {
     font-size: 14px;
     opacity: 0.9;
     font-weight: bold;
-
+    transition: all 0.3s ease; /* Плавный переход */
 }
 
 .top-right-link:hover {
     opacity: 1;
     color: #ffd452;
-
+    transform: scale(1.1); /* Увеличение при наведении */
 }
 
 /* Центральная часть */
@@ -94,7 +125,8 @@ body {
     text-align: center;
     font-size: 5rem;
     margin-top: 30px;
-    font-family: 'PP Mondwest', monospace;
+    font-family: 'PP Mondwest', monospace; /* Применили шрифт */
+    animation: flicker 2.5s linear infinite; /* Применили мерцание */
 }
 
 /* Навигация */
@@ -113,7 +145,17 @@ body {
     text-decoration: none;
     color: white;
     transition: transform 0.3s ease;
+    
+    /* Анимация появления с задержкой */
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
 }
+/* Задержки для иконок */
+.nav-item:nth-child(1) { animation-delay: 0.2s; }
+.nav-item:nth-child(2) { animation-delay: 0.4s; }
+.nav-item:nth-child(3) { animation-delay: 0.6s; }
+.nav-item:nth-child(4) { animation-delay: 0.8s; }
+
 
 .nav-item:hover {
     transform: translateY(-5px);
@@ -155,17 +197,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    animation: bobbing 3s ease-in-out infinite; /* Применили парение */
 }
 
 .content-block {
     width: 1165px;
-    height: 3000px;
+    /* Убрал фикс. высоту, чтобы блок был по контенту */
+    /* height: 3000px; */ 
+    min-height: 100vh; /* Минимальная высота */
     background: white;
     padding: 50px;
     margin: 15px 0;
     border: 1px solid #e0e0e0;
     border-radius: 2px;
+    margin-bottom: 50px; /* Отступ снизу */
 }
 
 .text-content {

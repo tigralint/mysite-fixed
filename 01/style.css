@@ -1,11 +1,3 @@
-@font-face {
-    font-family: 'PP Mondwest';
-    src: url('../fonts/PP-Mondwest.woff2') format('woff2'),
-        url('../fonts/PP-Mondwest.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
     background-image: url(../images/Иллюстрация_без_названия\ 170.png);
     font-family: 'PP Mondwest', monospace;
@@ -14,6 +6,7 @@ body {
     line-height: 1.6;
     color: #ffffff;
     /* Белый цвет для всего текста */
+    animation: fadeIn 0.8s ease-in-out; /* Анимация появления */
 }
 
 .header {
@@ -44,10 +37,12 @@ body {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
+    transition: all 0.3s ease; /* Плавный переход */
 }
 
 .navigation a:hover {
     color: #ffd452;
+    transform: translateY(-2px); /* Приподнимаем при наведении */
 }
 
 

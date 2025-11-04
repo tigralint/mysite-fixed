@@ -1,0 +1,27 @@
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 25px;
+    padding-bottom: 50px; /* Добавим отступ снизу */
+}
+
+input[type="Reset"],
+input[type="Submit"] {
+    padding: 10px 20px;
+    background-color: #ffd452;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    font-family: Arial, sans-serif;
+}
+
+input[type="Reset"]:hover,
+input[type="Submit"]:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
