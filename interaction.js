@@ -1,27 +1,60 @@
 document.addEventListener('DOMContentLoaded', () => {
     const character = document.querySelector('.character');
     
-    // Убедимся, что персонаж есть на странице (т.е. мы на главной)
+    // Если персонажа нет на странице, ничего не делаем
     if (!character) return;
 
-    document.addEventListener('mousemove', (e) => {
-        // Рассчитываем позицию мыши от -1 до 1 (от центра экрана)
-        const percentX = (e.clientX / window.innerWidth - 0.5) * 2;
-        const percentY = (e.clientY / window.innerHeight - 0.5) * 2;
-
-        // Максимальный наклон (в градусах)
-        const maxRotateX = 8;  // Наклон по оси Y
-        const maxRotateY = 12; // Наклон по оси X
-        
-        const rotateX = percentY * maxRotateX * -1; // -1, чтобы наклон был "от мыши"
-        const rotateY = percentX * maxRotateY;
-
-        // Применяем 3D-трансформацию для создания эффекта "наклона"
-        character.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    let charRect = character.getBoundingClientRect();
+    let charCenterX = charRect.left + charRect.width / 2;
+    let charCenterY = charRect.top + charRect.height / 2;
+    
+    // Обновляем центр персонажа при изменении размера окна
+    window.addEventListener('resize', () => {
+        charRect = character.getBoundingClientRect();
+        charCenterX = charRect.left + charRect.width / 2;
+        charCenterY = charRect.top + charRect.height / 2;
     });
 
-    // Сбрасываем наклон, когда мышь уходит со страницы
+    // Дистанция, на которой персонаж "замечает" мышь
+    const activationDistance = 400; // 400 пикселей
+
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        // Рассчитываем расстояние от мыши до центра персонажа
+        const dist = Math.sqrt(Math.pow(mouseX - charCenterX, 2) + Math.pow(mouseY - charCenterY, 2));
+
+        if (dist < activationDistance) {
+            // Мышь близко:
+            // 1. Останавливаем "парение"
+            character.style.animationPlayState = 'paused';
+
+            // 2. Рассчитываем наклон на основе близости
+            const percentX = (mouseX - charCenterX) / activationDistance;
+            const percentY = (mouseY - charCenterY) / activationDistance;
+
+            const maxRotateX = 10;
+            const maxRotateY = 15;
+            
+            const rotateX = percentY * maxRotateX * -1; // -1 для инверсии
+            const rotateY = percentX * maxRotateY;
+
+            // Применяем 3D-наклон
+            character.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        } else {
+            // Мышь далеко:
+            // 1. Возобновляем "парение"
+            character.style.animationPlayState = 'running';
+
+            // 2. Сбрасываем наклон
+            character.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+        }
+    });
+
+    // Плавный возврат в исходное положение, когда мышь уходит со страницы
     document.body.addEventListener('mouseleave', () => {
+        character.style.animationPlayState = 'running';
         character.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
     });
 });
