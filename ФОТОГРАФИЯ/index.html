@@ -1,16 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотография</title>
+    <link rel="stylesheet" href="../style.css">
     <style>
+        /* Локальные стили для этой страницы */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
+        .photo-exhibit {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid #ffd452;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 212, 82, 0.2);
+            font-family: 'Courier New', Courier, monospace;
+            color: #f0f0f0;
+            text-align: center;
+        }
+        .photo-exhibit img {
+            max-width: 100%;
+            border: 1px solid #555;
+            background: #111;
+        }
+        .photo-exhibit p {
+            margin-top: 15px;
+            color: #ffd452;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
-    <img src="../images/карта.png" width="2500" height="1900" alt="Большое изображение">
+    <div class="photo-exhibit">
+        <a href="../images/фотография.jpg" target="_blank">
+            <img src="../images/фотография.jpg" alt="Великая туманность в Андромеде">
+        </a>
+        <p>ЭКСПОНАТ #001: Великая туманность в Андромеде.</p>
+        <p><a href="../ДНЕВНИК/index.html" style="color: #8cff8c;">[Вернуться в Дневник]</a></p>
+    </div>
 </body>
 </html>

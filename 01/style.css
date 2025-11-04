@@ -1,3 +1,7 @@
+/*
+ * СТИЛИ ДЛЯ СТРАНИЦ "ЗАДАЧИ" (01, 02, 03)
+ */
+ 
 body {
     background-image: url(../images/Иллюстрация_без_названия\ 170.png);
     font-family: 'PP Mondwest', monospace;
@@ -30,6 +34,7 @@ body {
 
 .navigation .current {
     text-decoration: underline;
+    color: #ffd452;
 }
 
 .navigation a {
@@ -53,87 +58,9 @@ body {
 .task-title {
     color: #ffffff;
     margin-bottom: 20px;
-}
-
-/* * НОВЫЙ СТИЛЬ ДЛЯ ПАСПОРТА
- */
-.passport-container {
-    background: #f4f4f4; /* Светло-серый фон документа */
-    color: #333; /* Темный текст */
-    padding: 25px;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4); /* Тень, чтобы "приподнять" */
-    max-width: 800px; /* Ограничим ширину */
-    margin: 0 auto; /* Центрируем */
-}
-
-.passport-container h2 {
     text-align: center;
-    color: #111; /* Черный заголовок паспорта */
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
+    font-size: 1.5rem;
 }
-/* * КОНЕЦ НОВОГО СТИЛЯ
- */
- 
-.signature {
-    text-decoration: underline;
-    margin-top: 30px;
-}
-
-table {
-    margin-top: 40px;
-    width: 100%;
-    max-width: 600px;
-    color: #333; /* Убедимся, что текст в таблице темный */
-}
-
-.photo-cell {
-    width: 150px;
-    height: 200px;
-    margin-right: 20px;
-}
-
-.photo-cell img {
-    width: 150px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #ccc; /* Тонкая рамка у фото */
-}
-
-.info-cell {
-    padding-left: 30px;
-    vertical-align: top;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.image-item {
-    text-align: center;
-    max-width: 1900px;
-}
-
-.image-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.caption {
-    margin-top: 10px;
-    font-style: italic;
-    color: #ffffff;
-}
-/*
- * ДОПОЛНЕНИЯ ДЛЯ СТРАНИЦ 02 и 03
- */
 
 /* 1. Стиль "документа" для паспорта (на 01 и 02) */
 .passport-container {
@@ -149,6 +76,7 @@ table {
     color: #111;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
+    text-align: center;
 }
 .passport-container table, .passport-container p {
     color: #333; /* Темный текст для всех элементов */
@@ -160,9 +88,26 @@ table {
     color: #007bff;
     cursor: pointer;
     text-decoration: underline;
+    transition: color 0.3s ease;
 }
 .passport-container #for_click:hover {
     color: #0056b3;
+}
+.passport-container table {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 600px;
+}
+.passport-container img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ccc; /* Тонкая рамка у фото */
+}
+.passport-container .info-cell {
+    padding-left: 30px;
+    vertical-align: top;
 }
 
 
@@ -172,7 +117,6 @@ table {
     margin: 20px auto;
     padding: 30px;
     
-    /* "Панель" как в Рации */
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid #ffd452;
     border-radius: 8px;
@@ -190,7 +134,6 @@ table {
     color: #f0f0f0;
 }
 
-/* Поля ввода как в Рации */
 .calculator-panel input[type="number"] {
     background: #2a2a2a;
     color: #f0f0f0;
@@ -209,12 +152,11 @@ table {
     border-color: #ffd452;
 }
 
-/* Окно результата */
 #result {
     border: 1px solid #ffd452;
     padding: 10px;
     margin: 10px 0;
-    width: 100% !important; /* Перебиваем встроенный стиль */
+    width: 100% !important;
     box-sizing: border-box;
     min-height: 40px;
     color: #ffd452;

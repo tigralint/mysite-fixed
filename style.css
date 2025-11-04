@@ -40,7 +40,21 @@ body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
     position: relative;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.1); /* Легкое свечение */
+    animation: fadeIn 0.8s ease-in-out; /* Глобальная анимация */
 }
+
+/* Глобальный стиль ссылок */
+a {
+    color: #8cff8c; /* Цвет как в терминале */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+a:hover {
+    color: #ffd452;
+    text-decoration: underline;
+}
+
 
 .container {
     max-width: 1200px;
@@ -48,8 +62,6 @@ body {
     padding: 20px;
     position: relative;
     min-height: 100vh;
-    /* Применяем анимацию появления */
-    animation: fadeIn 0.8s ease-in-out;
 }
 
 /* Верхняя часть */
@@ -78,13 +90,13 @@ body {
     opacity: 0.8;
     margin-left: 13px;
     font-weight: bold;
-    transition: all 0.3s ease; /* Плавный переход */
+    transition: all 0.3s ease;
 }
 
 .current-page-link:hover {
     opacity: 1;
     color: #ffd452;
-    transform: scale(1.1); /* Увеличение при наведении */
+    transform: scale(1.1);
 }
 
 .top-right {
@@ -111,13 +123,13 @@ body {
     font-size: 14px;
     opacity: 0.9;
     font-weight: bold;
-    transition: all 0.3s ease; /* Плавный переход */
+    transition: all 0.3s ease;
 }
 
 .top-right-link:hover {
     opacity: 1;
     color: #ffd452;
-    transform: scale(1.1); /* Увеличение при наведении */
+    transform: scale(1.1);
 }
 
 /* Центральная часть */
@@ -125,8 +137,8 @@ body {
     text-align: center;
     font-size: 5rem;
     margin-top: 30px;
-    font-family: 'PP Mondwest', monospace; /* Применили шрифт */
-    animation: flicker 2.5s linear infinite; /* Применили мерцание */
+    font-family: 'PP Mondwest', monospace;
+    animation: flicker 2.5s linear infinite;
 }
 
 /* Навигация */
@@ -146,11 +158,9 @@ body {
     color: white;
     transition: transform 0.3s ease;
     
-    /* Анимация появления с задержкой */
     opacity: 0;
     animation: fadeIn 0.5s ease forwards;
 }
-/* Задержки для иконок */
 .nav-item:nth-child(1) { animation-delay: 0.2s; }
 .nav-item:nth-child(2) { animation-delay: 0.4s; }
 .nav-item:nth-child(3) { animation-delay: 0.6s; }
@@ -178,7 +188,12 @@ body {
     font-size: 14px;
     opacity: 0.9;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
+.nav-item:hover .nav-text {
+    color: #ffd452;
+}
+
 
 /* Нижняя часть */
 
@@ -197,20 +212,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: bobbing 3s ease-in-out infinite; /* Применили парение */
+    animation: bobbing 3s ease-in-out infinite;
 }
 
 .content-block {
     width: 1165px;
-    /* Убрал фикс. высоту, чтобы блок был по контенту */
-    /* height: 3000px; */ 
-    min-height: 100vh; /* Минимальная высота */
+    min-height: 100vh;
     background: white;
     padding: 50px;
     margin: 15px 0;
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    margin-bottom: 50px; /* Отступ снизу */
+    margin-bottom: 50px;
 }
 
 .text-content {
@@ -218,29 +231,18 @@ body {
     line-height: 1.6;
     font-family: Arial, sans-serif;
 }
-/*
- * ДОПОЛНИТЕЛЬНЫЕ СТИЛИ (Мелочи)
- */
 
-/* 1. Стильный темный скроллбар */
+/* Скроллбар */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #1a1a1a; /* Фон */
+  background: #1a1a1a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #444; /* Ползунок */
+  background: #444;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffd452; /* Ползунок при наведении (желтый) */
-}
-
-/* 2. Подсветка текста под иконками навигации */
-.nav-item .nav-text {
-    transition: color 0.3s ease;
-}
-.nav-item:hover .nav-text {
-    color: #ffd452; /* Делаем текст желтым при наведении на всю кнопку */
+  background: #ffd452;
 }

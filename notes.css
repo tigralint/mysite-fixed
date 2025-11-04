@@ -1,0 +1,53 @@
+/*
+ * СТИЛИ ДЛЯ ОТДЕЛЬНЫХ ЗАМЕТОК
+ * (ЗАПИСЬ О СНИМКЕ, ПРОСТО ЗАПИСЬ)
+ */
+ 
+body {
+    background-image: url('images/Иллюстрация_без_названия 170.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.note-container {
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
+    
+    /* "Панель" как в Рации */
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #ffd452;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 212, 82, 0.2);
+    
+    /* Шрифты как в Терминале */
+    font-family: 'Courier New', Courier, monospace;
+    color: #f0f0f0;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    
+    /* Свечение */
+    text-shadow: 0 0 5px rgba(255, 212, 82, 0.2);
+}
+
+.note-container a {
+    color: #8cff8c;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.note-container a:hover {
+    color: #ffd452;
+    background: #1a1a1a;
+}
