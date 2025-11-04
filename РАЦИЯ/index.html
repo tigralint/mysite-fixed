@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Wanderer</title>
+    <meta name="description" content="Рация - Отправить сообщение">
+    <title>Рация - Ночной Странник</title>
     <div id="top"></div>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="style.css"> </head>
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../lightbox.css">
+</head>
 <body>
     <div class="container">
         <div class="top-left">
@@ -44,60 +45,56 @@
 
         <br><br><br>
 
+        <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+            <p style="margin-bottom: 20px;"><b>Давай дружить</b><input type="hidden" name="q" value="search"></p>
+            
+            <p style="margin-bottom: 15px;">Фамилия: <input type="Text" name="last_name" size=20 value="Харченко"></p>
+            
+            <p style="margin-bottom: 15px;">Возраст: <input type="Number" name="age" size=20 value="19"></p>
+            
+            <p style="margin-bottom: 15px;">Что любишь больше:
+                <input type="Radio" name="place" value="Coffe" id="r1"><label for="r1">кофе</label>
+                <input type="Radio" name="place" value="Tea" checked id="r2"><label for="r2">чай</label>
+                <input type="Radio" name="place" value="Equally" id="r3"><label for="r3">одинаково</label>
+            </p>
 
-        <body>
+            <p style="margin-bottom: 15px; max-width: 700px; line-height: 1.5;">Чем увлекаешься:<br>
+                <input type="Checkbox" name="hobby" value="10" id="c1"> <label for="c1">рисование</label>
+                <input type="Checkbox" name="hobby" value="20" id="c2"> <label for="c2">спорт</label>
+                <input type="Checkbox" name="hobby" value="30" id="c3"> <label for="c3">дизайн</label>
+                <input type="Checkbox" name="hobby" value="40" id="c4"> <label for="c4">чтение</label>
+                <input type="Checkbox" name="hobby" value="50" id="c5"> <label for="c5">фотография</label>
+                <input type="Checkbox" name="hobby" value="60" id="c6"> <label for="c6">кулинария</label>
+                <input type="Checkbox" name="hobby" value="70" id="c7"> <label for="c7">музыка</label>
+                <input type="Checkbox" name="hobby" value="80" id="c8"> <label for="c8">игры</label>
+                <input type="Checkbox" name="hobby" value="90" id="c9"> <label for="c9">путешествия</label>
+                <input type="Checkbox" name="hobby" value="100" id="c10"> <label for="c10">программирование</label>
+            </p>
 
-    <head>
-    </head>
+            <p style="margin-bottom: 15px;">Как ты себя чувствуешь?
+                <select name="well-being">
+                    <OPTION value="плохо">плохо</OPTION>
+                    <OPTION value="нормально">нормально</OPTION>
+                    <OPTION value="хорошо">хорошо</OPTION>
+                </select>
+            </p>
 
-    <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
-        <p style="margin-bottom: 20px;"><b>Давай дружить</b><input type="hidden" name="q" value="search"></p>
-        
-        <p style="margin-bottom: 15px;">Фамилия: <input type="Text" name="last_name" size=20 value="Харченко"></p>
-        
-        <p style="margin-bottom: 15px;">Возраст: <input type="Number" name="age" size=20 value="19"></p>
-        
-        <p style="margin-bottom: 15px;">Что любишь больше:
-            <input type="Radio" name="place" value="Coffe">кофе
-            <input type="Radio" name="place" value="Tea" checked>чай
-            <input type="Radio" name="place" value="Equally">одинаково
-        </p>
+            <p style="margin-bottom: 15px;">Чего ты боишься?
+                <br><br>
+                <TEXTAREA cols=60 rows=4 name="textarea">Одиночества</TEXTAREA>
+            </p>
 
-        <p style="margin-bottom: 15px; max-width: 700px; line-height: 1.5;">Чем увлекаешься:
-            <input type="Checkbox" name="hobby" value="10"> рисование
-            <input type="Checkbox" name="hobby" value="20"> спорт
-            <input type="Checkbox" name="hobby" value="30"> дизайн
-            <input type="Checkbox" name="hobby" value="40"> чтение
-            <input type="Checkbox" name="hobby" value="50"> фотография
-            <input type="Checkbox" name="hobby" value="60"> кулинария
-            <input type="Checkbox" name="hobby" value="70"> музыка
-            <input type="Checkbox" name="hobby" value="80"> игры
-            <input type="Checkbox" name="hobby" value="90"> путешествия
-            <input type="Checkbox" name="hobby" value="100"> программирование
-        </p>
+            <p style="margin-bottom: 15px;">Дата: <input type="date" name="user_date" value='2025-09-18'></p>
+            <p style="margin-bottom: 15px;">Кодовое слово: <input type="Password" name="password" size=9 value="123"></p>
 
-        <p style="margin-bottom: 15px;">Как ты себя чувствуешь?
-            <select name="well-being">
-                <OPTION value="плохо">плохо</OPTION>
-                <OPTION value="нормально">нормально</OPTION>
-                <OPTION value="хорошо">хорошо</OPTION>
-            </select>
-        </p>
+            <p style="margin-bottom: 15px;">
+                <input type="Reset" name="Reset" value="Обновить">
+                <input type="Submit" name="submit" value="Отправить">
+            </p>
 
-                <p style="margin-bottom: 15px;">Чего ты боишься?
-                    <br><br>
-                    <TEXTAREA cols=60 rows=4 name="textarea">Одиночества</TEXTAREA>
-                </p>
+        </form>
 
-                <p style="margin-bottom: 15px;">Дата: <input type="date" name="user_date" value='2025-09-18'></p>
-                <p style="margin-bottom: 15px;">Кодовое слово: <input type="Password" name="password" size=9 value="123"></p>
-                <p style="margin-bottom: 15px;">
-                    <input type="Reset" name="Reset" value="Обновить">
-                    <input type="Submit" name="submit" value="Отправить">
-                </p>
-
-            </form>
-
-        </body>
-
+    </div>
+    <script src="../lightbox.js" defer></script>
+</body>
 </html>

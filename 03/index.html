@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная страница</title>
+    <meta name="description" content="Задание 3: Калькулятор">
+    <title>Задание 3 - Ночной Странник</title>
     <script src="calculate.js" defer></script>
     <link rel="stylesheet" href="../01/style.css">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../lightbox.css">
 </head>
-
 <body>
     <header class="header">
         <h1 class="main-title">НОЧНОЙ СТРАННИК</h1>
@@ -24,31 +24,23 @@
 
     <main class="content">
         <h3 class="task-title">Задание 3</h3>
-
         <br>
-
         <div class="calculator-panel">
-
             <h2 style="text-align: center;">Решение алгоритмической задачи</h2>
-
             <p><b>Z = 1/(XY)</b></p>
-
             <input type="number" id="x" placeholder="X">
             <input type="number" id="y" placeholder="Y">
-
             <br><br>
-
             <button onclick="calculate()">Вычислить</button>
-
             <div id="result">
                 Результат появится здесь
             </div>
-
             <form action="https://www.bing.com/search?" method="GET" target="_blank">
                 <input type="hidden" id="resultData" name="q">
                 <button type="submit">Отправить на Bing</button>
             </form>
-            
-        </div> </main>
+        </div>
+    </main>
+    <script src="../lightbox.js" defer></script>
 </body>
 </html>

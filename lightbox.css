@@ -1,0 +1,73 @@
+/*
+ * СТИЛИ ДЛЯ ВСПЛЫВАЮЩЕГО ОКНА (ЛАЙТБОКСА)
+ */
+
+#lightbox-overlay {
+    /* Скрыт по умолчанию */
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Сильное затемнение */
+    
+    /* Центрирование */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Анимация */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#lightbox-overlay.visible {
+    display: flex;
+}
+
+#lightbox-image {
+    max-width: 90vw; /* Макс. ширина 90% экрана */
+    max-height: 90vh; /* Макс. высота 90% экрана */
+    box-shadow: 0 0 50px rgba(255, 212, 82, 0.3);
+    border: 1px solid #ffd452;
+    border-radius: 4px;
+    
+    /* Анимация появления */
+    transform: scale(0.9);
+    animation: zoomIn 0.3s ease-in-out forwards;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffd452;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px #000;
+}
+.lightbox-close:hover {
+    color: #ffd452;
+    transform: scale(1.1);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

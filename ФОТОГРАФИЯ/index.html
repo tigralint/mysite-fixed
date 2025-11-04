@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фотография</title>
+    <meta name="description" content="Экспонат: Туманность Андромеды">
+    <title>Фотография - Ночной Странник</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../lightbox.css">
     <style>
         /* Локальные стили для этой страницы */
         body {
@@ -29,6 +31,7 @@
             max-width: 100%;
             border: 1px solid #555;
             background: #111;
+            cursor: zoom-in;
         }
         .photo-exhibit p {
             margin-top: 15px;
@@ -39,11 +42,12 @@
 </head>
 <body>
     <div class="photo-exhibit">
-        <a href="../images/фотография.jpg" target="_blank">
+        <a href="../images/фотография.jpg">
             <img src="../images/фотография.jpg" alt="Великая туманность в Андромеде">
         </a>
         <p>ЭКСПОНАТ #001: Великая туманность в Андромеде.</p>
-        <p><a href="../ДНЕВНИК/index.html" style="color: #8cff8c;">[Вернуться в Дневник]</a></p>
+        <p><a href="../ДНЕВНИК/index.html">[Вернуться в Дневник]</a></p>
     </div>
+    <script src="../lightbox.js" defer></script>
 </body>
 </html>

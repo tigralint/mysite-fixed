@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная страница - Задание 2</title>
+    <meta name="description" content="Задание 2: Паспорт">
+    <title>Задание 2 - Ночной Странник</title>
     <link rel="stylesheet" href="../01/style.css">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../lightbox.css">
 </head>
-
 <body>
     <header class="header">
         <h1 class="main-title">НОЧНОЙ СТРАННИК</h1>
@@ -25,39 +25,36 @@
         <h3 class="task-title">Задание 2</h3>
 
         <div class="passport-container">
-            <h2>Паспорт гражданина Российской Федерации</h2>
-
-            <p>
-                <b>Паспорт выдан:</b> ГУ МВД ПО Г.МОСКВЕ
-            </p>
-
-            <p>
-                <b>Дата выдачи:</b> 02.07.2020 &nbsp;&nbsp;&nbsp; <b>Код подразделения:</b> 770-061
-            </p>
-
-            <p class="signature">
-                <b>Подпись:</b> Харченко
-            </p>
-
-            <table>
-                <tr>
-                    <td style="width: 150px; height: 200px; margin-right: 20px;">
-                        <img src="../images/photo_5409144068589617417_x.jpg" alt="Фотография">
-                    </td>
-                    <td class="info-cell">
-                        <p><b>Фамилия:</b><span id="surname"> Харченко</span></p>
-                        <p><b>Имя:</b><span id="name"> Елизавета</span></p>
-                        <p><b>Пол:</b> жен. &nbsp;&nbsp;&nbsp; <b>Дата рождения:</b> <span id="date">19.05.2006</span></p>
-                        <p><b>Город:</b> Москва</p>
-                    </td>
-                </tr>
-            </table>
-
-            <br>
-            <p id="for_click">Перевести на латиницу</p>
-
+            <h2>Паспорт гражданина</h2>
+            
+            <div class="passport-content">
+                <div class="passport-photo">
+                    <a href="../images/photo_5409144068589617417_x.jpg">
+                        <img src="../images/photo_5409144068589617417_x.jpg" alt="Аватар: Лис с мечом">
+                    </a>
+                </div>
+                
+                <div class="passport-info">
+                    <p><b>Фамилия:</b> <span id="surname">Харченко</span></p>
+                    <p><b>Имя:</b> <span id="name">Елизавета</span></p>
+                    <p><b>Дата рождения:</b> <span id="date">19.05.2006</span></p>
+                    <p><b>Пол:</b> жен.</p>
+                    <p><b>Город:</b> Москва</p>
+                    <p><b>Паспорт выдан:</b> ГУ МВД ПО Г.МОСКВЕ</p>
+                    <p><b>Дата выдачи:</b> 02.07.2020</p>
+                    <p><b>Код:</b> 770-061</p>
+                </div>
+            </div>
+            
+            <div class="passport-footer">
+                <p class="signature">Подпись: <span>Харченко</span></p>
+                <br>
+                <p id="for_click">Перевести на латиницу</p>
+            </div>
+            
         </div> </main>
 
-    <script src="./change.js"></script>
+    <script src="./change.js" defer></script>
+    <script src="../lightbox.js" defer></script>
 </body>
 </html>

@@ -13,25 +13,21 @@
 form {
     max-width: 700px;
     margin: 0 auto;
-    padding: 35px; /* Увеличим отступ */
+    padding: 35px;
     padding-bottom: 50px;
-    
-    /* Создаем "панель" */
-    background: rgba(0, 0, 0, 0.4); /* Полупрозрачный фон */
-    border: 1px solid #ffd452; /* Желтая рамка */
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #ffd452;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(255, 212, 82, 0.2); /* Желтое свечение */
-    
-    /* Шрифты для формы */
+    box-shadow: 0 0 20px rgba(255, 212, 82, 0.2);
     font-family: 'Courier New', Courier, monospace;
-    color: #f0f0f0; /* Светлый текст */
+    color: #f0f0f0;
 }
 
 /* 3. Заголовок "Давай дружить" */
 form p:first-child b {
-    font-family: 'PP Mondwest', monospace; /* Наш главный шрифт */
-    font-size: 2.5rem; /* Крупнее */
-    color: #ffd452; /* Желтый */
+    font-family: 'PP Mondwest', monospace;
+    font-size: 2.5rem;
+    color: #ffd452;
     text-shadow: 0 0 10px rgba(255, 212, 82, 0.5);
     display: block;
     text-align: center;
@@ -40,7 +36,7 @@ form p:first-child b {
 
 /* 4. Группы полей (теги <p>) */
 form p {
-    margin-bottom: 25px; /* Больше воздуха */
+    margin-bottom: 25px;
     line-height: 1.6;
 }
 
@@ -51,19 +47,19 @@ input[type="date"],
 input[type="Password"],
 textarea,
 select {
-    background: #2a2a2a; /* Темный фон поля */
+    background: #2a2a2a;
     color: #f0f0f0;
-    border: 1px solid #555; /* Темная рамка */
+    border: 1px solid #555;
     border-radius: 4px;
     padding: 10px;
     width: 100%;
-    box-sizing: border-box; /* Важно! */
+    box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
     transition: all 0.3s ease;
+    caret-color: #ffd452; /* Желтый курсор */
 }
 
-/* Эффект :focus (когда кликнули в поле) */
 input[type="text"]:focus,
 input[type="Number"]:focus,
 input[type="date"]:focus,
@@ -71,64 +67,49 @@ input[type="Password"]:focus,
 textarea:focus,
 select:focus {
     outline: none;
-    border-color: #ffd452; /* Желтая рамка */
-    box-shadow: 0 0 10px rgba(255, 212, 82, 0.3); /* Желтое свечение */
+    border-color: #ffd452;
+    box-shadow: 0 0 10px rgba(255, 212, 82, 0.3);
 }
 
 textarea {
-    resize: vertical; /* Разрешаем менять размер только по высоте */
+    resize: vertical;
     min-height: 100px;
 }
 
-/* 6. Кастомные Radio и Checkbox (Самое важное) */
-
+/* 6. Кастомные Radio и Checkbox */
 input[type="Radio"],
 input[type="Checkbox"] {
-    appearance: none; /* Прячем стандартный вид */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    
-    /* Рисуем свою "коробку" */
     width: 16px;
     height: 16px;
     background: #2a2a2a;
     border: 1px solid #555;
     position: relative;
-    top: 3px; /* Выравниваем по тексту */
+    top: 3px;
     margin-right: 5px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
-
-/* Скругляем Radio */
 input[type="Radio"] {
     border-radius: 50%;
 }
-
-/* Квадратим Checkbox */
 input[type="Checkbox"] {
     border-radius: 3px;
 }
-
-/* Ховер-эффект для них */
 input[type="Radio"]:hover,
 input[type="Checkbox"]:hover {
     border-color: #ffd452;
 }
-
-/* Рисуем "галочку/точку" при :checked */
 input[type="Radio"]::after,
 input[type="Checkbox"]::after {
     content: '';
     display: block;
     position: absolute;
-    
-    /* Прячем по умолчанию */
     transform: scale(0);
     transition: transform 0.2s ease;
 }
-
-/* Точка для Radio */
 input[type="Radio"]::after {
     width: 8px;
     height: 8px;
@@ -137,8 +118,6 @@ input[type="Radio"]::after {
     top: 3px;
     left: 3px;
 }
-
-/* Галочка для Checkbox */
 input[type="Checkbox"]::after {
     width: 4px;
     height: 8px;
@@ -148,8 +127,6 @@ input[type="Checkbox"]::after {
     left: 5px;
     transform: rotate(45deg) scale(0);
 }
-
-/* Показываем "галочку/точку" при :checked */
 input[type="Radio"]:checked::after,
 input[type="Checkbox"]:checked::after {
     transform: scale(1);
@@ -159,12 +136,11 @@ input[type="Checkbox"]:checked::after {
 }
 
 /* 7. Кнопки (Пульсация) */
-
 input[type="Reset"],
 input[type="Submit"] {
-    padding: 12px 22px; /* Чуть побольше */
+    padding: 12px 22px;
     background-color: #ffd452;
-    color: #222; /* Темнее для контраста */
+    color: #222;
     border: none;
     border-radius: 4px;
     font-weight: bold;
@@ -174,21 +150,16 @@ input[type="Submit"] {
     font-family: Arial, sans-serif;
     font-size: 1rem;
 }
-
 input[type="Submit"] {
-    /* Анимация пульсации для "Отправить" */
     animation: pulse 2s infinite;
 }
-
 input[type="Reset"]:hover,
 input[type="Submit"]:hover {
     background-color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    animation-play-state: paused; /* Пауза анимации при наведении */
+    animation-play-state: paused;
 }
-
-/* Кнопку "Сброс" делаем менее заметной */
 input[type="Reset"] {
     background-color: #555;
     color: #f0f0f0;
