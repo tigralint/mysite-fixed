@@ -37,6 +37,7 @@
     100% { clip-path: inset(70% 0 10% 0); }
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -89,6 +90,7 @@ a:hover {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    z-index: 10;
 }
 .top-left-icon {
     width: 80px;
@@ -118,6 +120,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    z-index: 10;
 }
 .top-right-icon {
     width: 70px;
@@ -233,6 +236,7 @@ a:hover {
     position: absolute;
     bottom: 50px;
     right: -130px;
+    z-index: 10;
 }
 .character {
     width: 300px;
@@ -290,31 +294,63 @@ a:hover {
     .container {
         width: 100%;
         padding: 10px;
+        /* Добавляем отступы, чтобы освободить место */
+        padding-top: 100px; 
+        padding-bottom: 150px;
+        overflow-x: hidden; /* Убираем случайный горизонтальный скролл */
     }
 
-    /* Прячем лишние элементы */
+    /*
+     * ИСПРАВЛЕНИЕ: Возвращаем элементы, но меняем их позицию
+     */
     .top-left,
     .top-right,
     .bottom-right {
-        display: none;
+        display: block; /* Показываем их */
+        transform-origin: top left; /* Управляем точкой масштабирования */
+    }
+
+    .top-left {
+        top: 15px;
+        left: 10px;
+        transform: scale(0.7); /* Уменьшаем */
+        left: -10px; /* Двигаем */
+    }
+    
+    .top-right {
+        top: 15px;
+        right: 10px;
+        left: auto; /* Сбрасываем left */
+        transform: scale(0.7); /* Уменьшаем */
+        transform-origin: top right;
+    }
+
+    .bottom-right {
+        bottom: 15px;
+        right: 10px;
+        left: auto; /* Сбрасываем left */
+        transform: scale(0.6); /* Сильно уменьшаем */
+        transform-origin: bottom right;
+        opacity: 0.8; /* Делаем полупрозрачным, чтобы не мешал */
     }
 
     /* Уменьшаем заголовок */
     .main-title {
-        font-size: 2.5rem; /* Значительно меньше */
-        margin-top: 20px;
+        font-size: 2.2rem; /* Значительно меньше */
+        margin-top: 0px; /* Убираем отступ */
+        padding: 0 10px;
     }
 
     /* Уменьшаем отступы навигации */
     .navigation {
-        margin-top: 40px;
-        gap: 20px;
-        justify-content: center; /* Центрируем, если будет перенос */
+        margin-top: 30px;
+        gap: 15px; /* Сближаем иконки */
+        justify-content: center;
     }
     
     .nav-icon {
-        width: 60px;
-        height: 50px;
+        width: 55px;
+        height: 45px;
     }
     .nav-text {
         font-size: 12px;
@@ -323,7 +359,7 @@ a:hover {
     /* Делаем "белый лист" (Терминал Дневника) на всю ширину */
     .content-block {
         width: 98%;
-        padding: 20px;
+        padding: 15px;
         margin: 20px auto;
     }
 }
