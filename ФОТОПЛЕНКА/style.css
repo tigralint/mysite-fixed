@@ -1,21 +1,83 @@
-.image-block {
-    margin-bottom: 30px;
-    padding: 15px;
-    font-family: Arial;
-    max-width: 600px;
-    margin: 30px auto; /* Добавил отступ сверху/снизу */
-    padding: 20px;
-    border-radius: 8px; /* Скруглим углы */
-    transition: all 0.3s ease-in-out;
+/*
+ * СТИЛИ ДЛЯ "ФОТОПЛЕНКИ" (Горизонтальная кинопленка)
+ */
+
+/* 1. Контейнер, который позволяет горизонтальный скролл */
+.film-strip-container {
+    width: 100%;
+    overflow-x: auto; /* Включаем горизонтальный скролл */
+    background: rgba(0, 0, 0, 0.3); /* Фон для области скролла */
+    border: 1px solid #444;
+    padding: 20px 0;
+    
+    /* Стилизуем скроллбар (только для горизонтали) */
+    scrollbar-width: thin;
+    scrollbar-color: #ffd452 #222;
 }
 
+/* 2. Сама "пленка" (очень широкая) */
+.film-strip {
+    display: flex;
+    flex-wrap: nowrap; /* Запрещаем перенос строк */
+    width: max-content; /* Ширина по содержимому */
+    position: relative; /* Для перфорации */
+    padding: 0 15px;
+}
+
+/* 3. Перфорация (дырочки) */
+.film-strip::before,
+.film-strip::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 12px; /* Высота "дырочек" */
+    
+    /* Рисуем "дырочки" с помощью градиента */
+    background: radial-gradient(circle at 6px 6px, transparent 0, transparent 4px, #222 4px) repeat-x;
+    background-size: 18px 12px;
+}
+.film-strip::before { top: -15px; } /* Дырочки сверху */
+.film-strip::after { bottom: -15px; } /* Дырочки снизу */
+
+
+/* 4. Кадр "пленки" (бывший .image-block) */
+.image-block {
+    flex: 0 0 auto; /* Не сжимать, не растягивать */
+    width: 450px; /* Ширина кадра */
+    margin: 0 15px;
+    padding: 15px;
+    background: #1a1a1a; /* Фон кадра */
+    border: 1px solid #555;
+    border-radius: 4px;
+    text-align: center;
+    font-family: Arial;
+    color: #ccc;
+    transition: all 0.3s ease-in-out;
+}
 .image-block:hover {
     transform: scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-color: #ffd452;
+    box-shadow: 0 0 20px rgba(255, 212, 82, 0.2);
 }
 
 .image-block img {
     max-width: 100%;
     height: auto;
-    border-radius: 4px; /* Скруглим углы у самих картинок */
+    border-radius: 2px;
+    border: 1px solid #333;
+}
+
+.image-block p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ffd452; /* Подпись желтым */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* 5. Убираем старый стиль для галереи (он нам больше не нужен) */
+@media (min-width: 600px) {
+    .image-block {
+        max-width: 450px; /* Фиксируем ширину кадра */
+    }
 }

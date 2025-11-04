@@ -131,3 +131,92 @@ table {
     font-style: italic;
     color: #ffffff;
 }
+/*
+ * ДОПОЛНЕНИЯ ДЛЯ СТРАНИЦ 02 и 03
+ */
+
+/* 1. Стиль "документа" для паспорта (на 01 и 02) */
+.passport-container {
+    background: #f4f4f4; /* Светло-серый фон документа */
+    color: #333; /* Темный текст */
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4); /* Тень */
+    max-width: 800px;
+    margin: 0 auto;
+}
+.passport-container h2 {
+    color: #111;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.passport-container table, .passport-container p {
+    color: #333; /* Темный текст для всех элементов */
+}
+.passport-container .signature {
+    color: #333;
+}
+.passport-container #for_click {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.passport-container #for_click:hover {
+    color: #0056b3;
+}
+
+
+/* 2. Стиль "панели" для калькулятора (на 03) */
+.calculator-panel {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    
+    /* "Панель" как в Рации */
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #ffd452;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 212, 82, 0.2);
+    
+    font-family: 'Courier New', Courier, monospace;
+    color: #f0f0f0;
+}
+.calculator-panel h2 {
+    color: #ffd452;
+    text-align: center;
+    font-family: 'PP Mondwest', monospace;
+}
+.calculator-panel p {
+    color: #f0f0f0;
+}
+
+/* Поля ввода как в Рации */
+.calculator-panel input[type="number"] {
+    background: #2a2a2a;
+    color: #f0f0f0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+.calculator-panel input[type="number"]:focus {
+    outline: none;
+    border-color: #ffd452;
+}
+
+/* Окно результата */
+#result {
+    border: 1px solid #ffd452;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100% !important; /* Перебиваем встроенный стиль */
+    box-sizing: border-box;
+    min-height: 40px;
+    color: #ffd452;
+    background: #2a2a2a;
+}

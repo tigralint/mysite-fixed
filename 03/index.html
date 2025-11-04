@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-</html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная страница</title>
-    <script src="calculate.js"></script>
+    <script src="calculate.js" defer></script>
     <link rel="stylesheet" href="../01/style.css">
-    <link rel="stylesheet" href="style.css"> </head>
-
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -26,11 +23,11 @@
     </nav>
 
     <main class="content">
-        <h3 class="task-title">Задание 2</h3>
+        <h3 class="task-title">Задание 3</h3>
 
         <br>
 
-        <body>
+        <div class="calculator-panel">
 
             <h2 style="text-align: center;">Решение алгоритмической задачи</h2>
 
@@ -43,7 +40,7 @@
 
             <button onclick="calculate()">Вычислить</button>
 
-            <div id="result" style="border: 1px solid #000; padding: 10px; margin: 10px 0; width: 300px;">
+            <div id="result">
                 Результат появится здесь
             </div>
 
@@ -51,6 +48,7 @@
                 <input type="hidden" id="resultData" name="q">
                 <button type="submit">Отправить на Bing</button>
             </form>
-        </body>
-
-        </html>
+            
+        </div> </main>
+</body>
+</html>
