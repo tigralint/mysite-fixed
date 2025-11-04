@@ -3,8 +3,12 @@
  */
 
 #lightbox-overlay {
-    /* Скрыт по умолчанию */
-    display: none;
+    /*
+     * ВОТ ГЛАВНОЕ ИСПРАВЛЕНИЕ:
+     * 'display: none;' теперь единственный, кто управляет видимостью.
+     * Я убрал 'display: flex;' из этого блока, который все ломал.
+     */
+    display: none; /* Скрыт по умолчанию */
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -13,27 +17,25 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.85); /* Сильное затемнение */
     
-    /* Центрирование */
-    display: flex;
+    /* Центрирование (сработает, когда JS добавит .visible) */
     justify-content: center;
     align-items: center;
     
-    /* Анимация */
     animation: fadeIn 0.3s ease-in-out;
 }
 
+/* Этот класс JavaScript добавит при клике */
 #lightbox-overlay.visible {
-    display: flex;
+    display: flex; /* Показываем Лайтбокс */
 }
 
 #lightbox-image {
-    max-width: 90vw; /* Макс. ширина 90% экрана */
-    max-height: 90vh; /* Макс. высота 90% экрана */
+    max-width: 90vw;
+    max-height: 90vh;
     box-shadow: 0 0 50px rgba(255, 212, 82, 0.3);
     border: 1px solid #ffd452;
     border-radius: 4px;
     
-    /* Анимация появления */
     transform: scale(0.9);
     animation: zoomIn 0.3s ease-in-out forwards;
 }
@@ -49,6 +51,7 @@
     padding: 10px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 4px;
+    display: none; /* Скрываем по умолчанию */
 }
 
 .lightbox-close {
@@ -70,4 +73,9 @@
 @keyframes zoomIn {
     from { transform: scale(0.9); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
